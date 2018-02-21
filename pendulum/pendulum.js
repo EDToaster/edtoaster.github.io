@@ -1,9 +1,9 @@
 let plotw = 100;
 let ploth = 100;
 let arr = [];
-let factor = 5;
+let factor = 3;
 
-let upf = 5;
+let upf = 1;
 
 let curr = null;
 
