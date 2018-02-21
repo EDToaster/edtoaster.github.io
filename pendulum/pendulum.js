@@ -1,14 +1,14 @@
-let plotw = 100;
-let ploth = 100;
+let plotw = 50;
+let ploth = 50;
 let arr = [];
-let factor = 5;
+let factor = 10;
 
 let upf = 1;
 
 let curr = null;
 
-let coordX = 0
-let coordY = 0;
+let coordX1 = 0;
+let coordY1 = 0;
 
 function setup() {
   var canvas = createCanvas(plotw * factor * 2, ploth * factor);
@@ -42,10 +42,11 @@ function draw() {
 
   if (curr != null) {
     curr.display(width / 2, 0, width / 2, height);
+
     noFill();
     stroke(0);
     strokeWeight(factor / 5);
-    rect(coordX * factor, coordY * factor, factor, factor);
+    rect(coordX1 * factor, coordY1 * factor, factor, factor);
   }
 
 }
@@ -56,8 +57,8 @@ function mousePressed() {
   if (i < 0 || j < 0 || i >= plotw || j >= ploth) {
     return;
   } else {
-    curr = arr[j * plotw + i];
-    coordX = i;
-    coordY = j;
+    coordX1 = i;
+    coordY1 = j;
+    curr = arr[coordY1 * plotw + coordX1];
   }
 }

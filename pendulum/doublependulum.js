@@ -53,6 +53,8 @@ function DblPen(theta1, theta2, length1, length2, mass1, mass2) {
     push();
     translate(offsetX, offsetY);
     translate(boundsX / 2, boundsY / 2);
+    rotate(HALF_PI);
+    scale(min(boundsX, boundsY) / parseFloat(length1 + length2) / 2);
     let col = this.getColor();
     stroke(col);
     line(0, 0, this.x1, this.y1);
