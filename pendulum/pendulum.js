@@ -1,7 +1,7 @@
 let plotw = 100;
 let ploth = 100;
 let arr = [];
-let factor = 3;
+let factor = 5;
 
 let upf = 1;
 
