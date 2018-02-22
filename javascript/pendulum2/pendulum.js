@@ -20,14 +20,25 @@ var time = 0.1; //lower values -> higher accuracy
 
 var path = [];
 
-var top;
+var curr, max, last;
+var x1, x2, y1, y2, xx1 = 0,
+  xx2 = 0,
+  yy1 = 0,
+  yy2 = 0;
+var maxEnergy;
+var canv;
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  topp = height / 4;
+  canv = createGraphics(width, topp);
+  canv.background(51);
+
   Theta1 = random(PI / 2, 3 * PI / 2);
   Theta2 = random(0, TWO_PI);
-
+  curr = 0;
+  max = windowWidth;
   var vhl = random(0.35, 0.65);
   l1 = height < width ? height / 2 * vhl - 5 : width / 2 * vhl - 5;
   l2 = height < width ? height / 2 * (1 - vhl) - 5 : width / 2 * (1 - vhl) - 5;
@@ -35,16 +46,47 @@ function setup() {
 
   m1 = random(1, 10);
   m2 = random(1, 10);
+
+  maxEnergy = getMaxEnergy();
+
+
   mu = 1 + m1 / m2;
 
   r1 = map(m1, 1, 10, 5, 20);
   r2 = map(m2, 1, 10, 5, 20);
   fill(100, 255, 100);
+  last = millis();
+}
+
+function getMaxEnergy() {
+  return (g * m1 * l1) + (g * m2 * (l1 + l2));
+}
+
+function getSystemPotential() {
+  return (g * m1 * (-x1)) + (g * m2 * (-x2));
 
 }
 
+function getSystemKinetic() {
+  return (1 / 2 * m1 * v1 * v1) + (1 / 2 * m2 * v2 * v2);
+}
+
+
+var v1, v2;
+
 function draw() {
+  let delta = millis() - last;
+  last = millis();
+
+
+  time = (delta) / 100.0;
+
+
+  curr = (last / 10.0) % max;
   background(51);
+  image(canv, 0, 0, width, canv.height);
+
+
   translate(width / 2, height / 2.0);
   rotate(PI / 2);
 
@@ -56,12 +98,30 @@ function draw() {
   Theta1 += dTheta1 * time;
   Theta2 += dTheta2 * time;
 
-  var x1 = l1 * cos(Theta1); //translate polar to carthesian
-  var y1 = l1 * sin(Theta1);
-  var x2 = l2 * cos(Theta2);
-  var y2 = l2 * sin(Theta2);
+  x1 = l1 * cos(Theta1); //translate polar to carthesian
+  y1 = l1 * sin(Theta1);
+  x2 = l2 * cos(Theta2);
+  y2 = l2 * sin(Theta2);
   x2 += x1;
   y2 += y1;
+
+  v1 = dist(x1, y1, xx1, yy1) / (delta) * 100;
+  v2 = dist(x2, y2, xx2, yy2) / (delta) * 100;
+
+  let pot = getSystemPotential();
+  let kin = getSystemKinetic();
+
+  console.log(pot);
+  console.log(kin);
+
+
+  let temp = map(pot + kin, -maxEnergy, maxEnergy, canv.height, 0);
+  canv.point(curr, temp);
+
+  xx1 = x1;
+  xx2 = x2;
+  yy1 = y1;
+  yy2 = y2;
 
   path.push([x2, y2]); //adding newest point to path
 
