@@ -64,6 +64,8 @@ function setup() {
   imagearr.fill(0);
 
   size = height / total;
+  last = createGraphics(400, 400);
+  last.background(0);
 
   //start NN
   nn = new NeuralNetwork(filesize, hidden_nodes, files.length);
@@ -77,19 +79,19 @@ const periter = 50;
 
 function draw() {
   //training
+  background(0);
   noSmooth();
-  strokeWeight(16);
-  stroke(255);
+  last.strokeWeight(16);
+  last.stroke(255);
   if (mouseIsPressed) {
-    line(pmouseX, pmouseY, mouseX, mouseY);
+    last.line(pmouseX, pmouseY, mouseX, mouseY);
   }
 
   train(periter);
   trainings += periter;
-  last = get(0, 0, width / 2, height - 60);
-  img = get(0, 0, width / 2, height - 60);
+
+  img = last.get();
   img.resize(28, 28);
-  background(0);
 
   image(last, 0, 0, width / 2, height - 60);
   image(img, width / 2, 0, width / 2, height - 60);
