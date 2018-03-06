@@ -1,5 +1,5 @@
 var points = [];
-var numPoints = 1000;
+var numPoints = 10000;
 var p;
 
 function f(x) {
