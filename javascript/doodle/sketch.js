@@ -18,7 +18,7 @@ let files = [{
   }
 ]
 
-const training = 1400; //dataset 1600, training images PER TYPE
+const training = 10000; //dataset 1600, training images PER TYPE
 const filesize = 784;
 
 function split_arr(arr, n) {
@@ -84,7 +84,11 @@ function draw() {
   last.strokeWeight(16);
   last.stroke(255);
   if (mouseIsPressed) {
-    last.line(pmouseX, pmouseY, mouseX, mouseY);
+    if (mouseButton == LEFT)
+      last.line(pmouseX, pmouseY, mouseX, mouseY);
+    else {
+      last.background(0);
+    }
   }
 
   train(periter);
@@ -112,7 +116,7 @@ function testImage(img) {
   textSize(30);
   fill(255);
   text(files[ind].name, 0, height);
-  text(trainings, 0, height - 30);
+  text(trainings + ", " + guess[ind], 0, height - 30);
 }
 
 function test(n) {
