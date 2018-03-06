@@ -55,7 +55,7 @@ const total = 20;
 let size;
 let nn;
 
-const hidden_nodes = 64;
+const hidden_nodes = 300;
 
 function setup() {
   createCanvas(800, 460);
