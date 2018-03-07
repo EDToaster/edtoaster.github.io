@@ -1,22 +1,76 @@
 let files = [{
-    name: "bird",
-  },
-  {
-    name: "camera"
-  },
-  {
-    name: "cat"
-  },
-  {
-    name: "cello"
-  },
-  {
-    name: "hammer"
-  },
-  {
-    name: "saxophone"
-  }
-]
+  name: "alarm clock"
+}, {
+  name: "axe"
+}, {
+  name: "banana"
+}, {
+  name: "bird"
+}, {
+  name: "blank"
+}, {
+  name: "bottlecap"
+}, {
+  name: "bracelet"
+}, {
+  name: "bucket"
+}, {
+  name: "bus"
+}, {
+  name: "cactus"
+}, {
+  name: "camera"
+}, {
+  name: "cat"
+}, {
+  name: "cello"
+}, {
+  name: "chair"
+}, {
+  name: "clock"
+}, {
+  name: "coffee cup"
+}, {
+  name: "cup"
+}, {
+  name: "fireplace"
+}, {
+  name: "fish"
+}, {
+  name: "flashlight"
+}, {
+  name: "foot"
+}, {
+  name: "fork"
+}, {
+  name: "hammer"
+}, {
+  name: "helicopter"
+}, {
+  name: "hexagon"
+}, {
+  name: "knee"
+}, {
+  name: "moon"
+}, {
+  name: "mouse"
+}, {
+  name: "rain"
+}, {
+  name: "river"
+}, {
+  name: "sailboat"
+}, {
+  name: "saxophone"
+}, {
+  name: "sun"
+}, {
+  name: "The Eiffel Tower"
+}, {
+  name: "The Mona Lisa"
+}, {
+  name: "toilet"
+}]
 
 const training = 10000; //dataset 1600, training images PER TYPE
 const filesize = 784;
@@ -30,6 +84,8 @@ function split_arr(arr, n) {
 }
 
 function preload() {
+
+
   for (let i = 0; i < files.length; i++) {
     let e = files[i];
 
@@ -55,7 +111,7 @@ const total = 20;
 let size;
 let nn;
 
-const hidden_nodes = 300;
+const hidden_nodes = 100;
 
 function setup() {
   createCanvas(800, 460);
