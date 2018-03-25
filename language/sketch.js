@@ -111,6 +111,11 @@ function draw() {
 	text(mappedguess[0].label, 0, 0 );
 	text(rounds, 0, 30);
 	text(input, 0, 60);
+	
+	for (let i = 0; i < 10; i++) {
+    		textSize(10);
+    		text(mappedguess[i].label.padEnd(30) + ": " + mappedguess[i].value, 0, i * 20 + 90);
+  	}
   	
 }
 
