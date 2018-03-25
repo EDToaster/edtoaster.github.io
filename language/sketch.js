@@ -1,9 +1,10 @@
 var training = [
-{
-	lang: "dutch"
-},
+
 {
 	lang: "english"
+},
+{
+	lang: "spanish"
 },
 {
 	lang: "esperanto"
@@ -33,7 +34,7 @@ var training = [
 	lang: "random"
 },
 {
-	lang: "spanish"
+	lang: "dutch"
 },
 {
 	lang: "swahili"
@@ -50,7 +51,7 @@ function preload(){
 		let filename = "data/" + str.lang + ".txt";
 		let result = Array(training.length).fill(0);
 		result[i] = 1;
-		this.result = result;
+		str.result = result;
 		
 		str.__proto__.inject = function(string){
 			str.data = string[0].split(',');
@@ -66,9 +67,10 @@ var nn;
 
 function setup() {
 	createCanvas(600,600);
-	nn = new NeuralNetwork(lengthcap * 26, 100, training.length);
+	nn = new NeuralNetwork(lengthcap * 26, 20, training.length);
 }
 
+let rounds = 0;
 
 function draw() {
 	background(51);
@@ -85,6 +87,7 @@ function draw() {
 			let target = category.result;
 			
 			nn.train(data, target);
+			rounds ++;
 		}
 	}
 	
@@ -106,6 +109,8 @@ function draw() {
   	textSize(30);
 	textAlign(LEFT, TOP);
 	text(mappedguess[0].label, 0, 0 );
+	text(rounds, 0, 30);
+	text(input, 0, 60);
   	
 }
 
