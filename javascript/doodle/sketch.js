@@ -109,7 +109,6 @@ function preload() {
 
 let ind = 0;
 const total = 20;
-let size;
 let nn;
 
 let hidden_nodes;
@@ -117,14 +116,10 @@ const def_nodes = 100;
 
 function setup() {
   createCanvas(1200, 460);
-  pimage = createImage(28, 28);
-  imagearr = new Array(filesize);
-  imagearr.fill(0);
 
   let val = parseInt(getfromname('n'));
   hidden_nodes = val ? (val < 1 ? def_nodes : val) : def_nodes;
 
-  size = height / total;
   last = createGraphics(400, 400);
   last.background(0);
 
@@ -178,6 +173,7 @@ function testImage(img) {
     data.push(img.pixels[i] / 255.0);
   }
   let guesses = nn.predict(data);
+
   let mappedguess = [];
   for (let i = 0; i < guesses.length; i++) {
     mappedguess.push({

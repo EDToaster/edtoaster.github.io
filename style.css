@@ -6,20 +6,20 @@ html, body {
 }
 
 h1{
-  animation: type 1s steps(23);
+  animation: type 1s steps(19);
   overflow: hidden;
   white-space: nowrap;
   top: 20%;
   font-family: Anonymous Pro;
   border-right:2px solid black;
-  width: 13em;
+  width: 11em;
 }
 @keyframes type{
   from {width:0ch;}
-  to {width:13em;}
+  to {width:11em;}
 }
 
-body {
+ body {
   margin: 0;
   display: flex;
 
