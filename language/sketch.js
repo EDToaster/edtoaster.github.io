@@ -3,15 +3,15 @@ var training = [
 {
 	lang: "english"
 },
-{
+/*{
 	lang: "spanish"
 },
 {
 	lang: "esperanto"
-},
+},*/
 {
 	lang: "french"
-},
+}/*,
 {
 	lang: "german"
 },
@@ -38,7 +38,7 @@ var training = [
 },
 {
 	lang: "swahili"
-}];
+}*/];
 
 let font;
 
@@ -112,7 +112,7 @@ function draw() {
 	text(rounds, 0, 30);
 	text(input, 0, 60);
 	
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < Math.min(10, mappedguess.length); i++) {
     		textSize(10);
     		text(mappedguess[i].label.padEnd(30) + ": " + mappedguess[i].value, 0, i * 20 + 90);
   	}
