@@ -31,7 +31,7 @@ function draw() {
     width / 2,
     height / 2,
     color(255, 0, 255));
-  qt = new QuadTree(bound, 20, 7, terrainHeight, 100);
+  qt = new QuadTree(bound, 20, 8, terrainHeight, 100);
   qt.subdivide();
 
   background(51);
