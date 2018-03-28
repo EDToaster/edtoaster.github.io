@@ -5,6 +5,7 @@ class Rectangle {
     this.w = w;
     this.h = h;
     this.col = col;
+    this.area = w * h * 4;
   }
 
   contains(point) {
@@ -25,8 +26,8 @@ class Rectangle {
 
   draw() {
     strokeWeight(1);
-    noStroke();
     fill(this.col);
+    noStroke();
     rectMode(CENTER);
     rect(this.x, this.y, this.w * 2, this.h * 2);
   }
@@ -48,48 +49,33 @@ class Rectangle {
   }
 }
 
-class Point {
-  constructor(x, y, col) {
-    this.x = x;
-    this.y = y;
-    this.col = col;
-  }
-
-  draw(col) {
-
-    strokeWeight(3);
-
-    if (col)
-      stroke(col);
-    else
-      stroke(this.col);
-
-    point(this.x, this.y);
-  }
-}
-
 class QuadTree {
-  constructor(boundary, cap, depth, queryPixels, res) {
+  constructor(boundary, depth, queryPixels, error, threshold) {
     this.boundary = boundary;
-    this.cap = cap;
     this.depth = depth;
     this.queryPixels = queryPixels;
+    this.error = error;
+    this.threshold = threshold;
 
+    console.log("created");
     this.subdivide();
   }
 
 
   shouldSplit() {
-	let pixels = 0;
+    return this.queryPixels(this.boundary, this.error, this.threshold);
   }
 
   subdivide() {
+    let sp = this.shouldSplit();
+    this.boundary.col = sp[1];
+
     if (this.depth - 1 <= 0) {
       //depth reached, do not subdivide
       return;
     }
 
-    if (!this.shouldSplit()) {
+    if (!sp[0]) {
       return;
     }
 
@@ -120,19 +106,14 @@ class QuadTree {
       hw, hh, this.boundary.col
     );
 
-    this.nw = new QuadTree(nw, this.cap, this.depth - 1, this.splitFunction, this.resolution);
-    this.ne = new QuadTree(ne, this.cap, this.depth - 1, this.splitFunction, this.resolution);
-    this.se = new QuadTree(se, this.cap, this.depth - 1, this.splitFunction, this.resolution);
-    this.sw = new QuadTree(sw, this.cap, this.depth - 1, this.splitFunction, this.resolution);
+    this.nw = new QuadTree(nw, this.depth - 1, this.queryPixels, this.error, this.threshold);
+    this.ne = new QuadTree(ne, this.depth - 1, this.queryPixels, this.error, this.threshold);
+    this.se = new QuadTree(se, this.depth - 1, this.queryPixels, this.error, this.threshold);
+    this.sw = new QuadTree(sw, this.depth - 1, this.queryPixels, this.error, this.threshold);
   }
 
   draw() {
     if (!this.nw) {
-      if (this.filled) {
-        this.boundary.col = color(100, 255, 255);
-      } else {
-        this.boundary.col = color(200, 255, 255);
-      }
       this.boundary.draw();
     } else {
       this.nw.draw();
