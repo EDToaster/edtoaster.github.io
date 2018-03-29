@@ -64,19 +64,22 @@ let bound;
 let qt;
 
 function preload() {
-  img = loadImage("earth.jpg");
+  img = loadImage("dog.png");
 }
 
 function setup() {
   createCanvas(200, 200);
   img.resize(200, 200);
-  qt = new QuadTree(new Rectangle(width / 2, height / 2, width / 2, height / 2), 10, subdivide, 1, .001);
   image(img, 0, 0, width, height);
-  // console.log(subdivide(bound, 200, .01));
+  background(51);
+  qt = new QuadTree(new Rectangle(width / 2, height / 2, width / 2, height / 2), 9, subdivide, 100, .10, false);
 }
 
-function draw() {
-  image(img, 0, 0, width, height);
-  qt.draw();
-  noLoop();
+function draw(){
+	background(51);
+	qt.draw();
+}
+
+function mousePressed(){
+	qt.passdownSubdivide();
 }
