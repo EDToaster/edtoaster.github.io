@@ -64,7 +64,7 @@ let bound;
 let qt;
 
 function preload() {
-  img = loadImage("dog.png");
+  img = loadImage("sun.jpg");
 }
 
 function setup() {
