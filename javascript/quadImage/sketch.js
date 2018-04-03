@@ -1,6 +1,3 @@
-let offsetX = 0;
-let offsetY = 0;
-
 function subdivide(bounds, error, threshold) {
   if (!img)
     return;
@@ -28,7 +25,6 @@ function subdivide(bounds, error, threshold) {
       });
     }
   }
-  img.updatePixels();
 
   let sumr = 0;
   let sumg = 0;
@@ -58,9 +54,7 @@ function subdivide(bounds, error, threshold) {
   return [amount >= threshold * bounds.area, color(averager, averageg, averageb)];
 }
 
-let c;
 let img;
-let bound;
 let qt;
 
 function preload() {
@@ -69,17 +63,18 @@ function preload() {
 
 function setup() {
   createCanvas(200, 200);
+  noSmooth();
   img.resize(200, 200);
   image(img, 0, 0, width, height);
   background(51);
   qt = new QuadTree(new Rectangle(width / 2, height / 2, width / 2, height / 2), 9, subdivide, 100, .10, false);
 }
 
-function draw(){
-	background(51);
-	qt.draw();
+function draw() {
+  background(51);
+  qt.draw();
 }
 
-function mousePressed(){
-	qt.passdownSubdivide();
+function mousePressed() {
+  qt.passdownSubdivide();
 }

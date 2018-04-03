@@ -40,11 +40,11 @@ class Rectangle {
   }
 
   Top() {
-    return Math.floor(this.y - this.h);
+    return Math.ceil(this.y - this.h);
   }
 
   Bottom() {
-    return Math.floor(this.y + this.h);
+    return Math.ceil(this.y + this.h);
   }
 }
 
@@ -57,28 +57,27 @@ class QuadTree {
     this.threshold = threshold;
     this.auto = autoSub;
     this.calcSub();
-    if(autoSub)
-    	this.subdivide();
+    if (autoSub)
+      this.subdivide();
   }
 
 
   shouldSplit() {
     return this.queryPixels(this.boundary, this.error, this.threshold);
   }
-  
-  passdownSubdivide(){
-  	if(this.nw)
-	{
-		this.nw.passdownSubdivide();
-		this.ne.passdownSubdivide();
-		this.sw.passdownSubdivide();
-		this.se.passdownSubdivide();
-	}else{
-		this.subdivide();
-	}
+
+  passdownSubdivide() {
+    if (this.nw) {
+      this.nw.passdownSubdivide();
+      this.ne.passdownSubdivide();
+      this.sw.passdownSubdivide();
+      this.se.passdownSubdivide();
+    } else {
+      this.subdivide();
+    }
   }
-  
-  calcSub(){
+
+  calcSub() {
     let sp = this.shouldSplit();
     this.boundary.col = sp[1];
     this.boundary.draw();
@@ -86,7 +85,7 @@ class QuadTree {
   }
 
   subdivide() {
-    if(!this.doSub){
+    if (!this.doSub) {
       return;
     }
 
