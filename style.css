@@ -1,0 +1,60 @@
+:root {
+  --background: #e7e7e7;
+
+  --primary: #3d91ff;
+  --primaryDark: #3268ff;
+}
+
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  font-size: 12pt;
+  background-color: var(--background);
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  display: inline;
+  vertical-align: middle;
+  font-size: 120%;
+}
+
+#logo {
+
+}
+
+#logo::before {
+
+}
+
+#logo::after {
+  
+}
+
+#navbar {
+  float: right;
+  margin-right: 20px;
+}
+
+#navbar li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#navbar li i {
+  margin-right: 5px;
+}
+
+#navbar a {
+  color: var(--primary);
+  border-bottom: 0px solid transparent;
+  transition: border-bottom .2s;
+}
+
+#navbar a:hover {
+  color: var(--primaryDark);
+  border-bottom: 2px solid var(--primaryDark);
+}
