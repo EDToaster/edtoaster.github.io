@@ -16,7 +16,8 @@ body {
 #header {
   font-size: 120%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: .5em 1em;
 }
 
 #header * {
@@ -24,17 +25,17 @@ body {
   vertical-align: middle;
 }
 
-#navbar li {
+.navbar li {
   display: inline-block;
   margin-right: 2em;
 }
 
-#navbar li i {
+.navbar li i {
   margin-right: .5em;
   vertical-align: text-top;
 }
 
-#navbar .navbar-item {
+.navbar .navbar-item {
   text-decoration: none;
   color: var(--primary);
   border-bottom: .2em solid transparent;
@@ -43,12 +44,12 @@ body {
   padding: .2em;
 }
 
-#navbar .navbar-item:hover{
+.navbar .navbar-item:hover{
   color: var(--primaryDark);
   border-bottom: .2em solid var(--primaryDark);
 }
 
-#navbar #logo {
+#header #logo {
   width: 3em;
   height: 3em;
 }
@@ -57,17 +58,22 @@ body {
  * CONTENT STYLING
  */
 
-#content {
+.bisection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
-.section {
+.bisection * {
+  width: 50%;
+  height: 20em;
+}
+
+.bisection .section1 {
+  background: var(--primary);
+}
+
+.bisection .section2 {
   background: white;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 1em;
-  width: 90%;
-  max-width: 50em;
 }
