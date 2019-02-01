@@ -31,8 +31,8 @@
 }
 
 html {
-  background: url(background.jpg) no-repeat center center fixed; 
-  background-size: cover;
+  background: url(background.jpg) no-repeat center fixed; 
+  background-size: auto;
 
   color: var(--primary-text);
   font-family: futura_md_btmedium, sans-serif;
@@ -61,7 +61,7 @@ a:hover {
 
 #header {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 
   padding: 1em;
 }
