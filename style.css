@@ -49,6 +49,10 @@ html {
 
 body {
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -61,7 +65,7 @@ a:hover {
   color: var(--primary-text-accent);
 }
 
-#header {
+#header, #footer {
   display: flex;
   justify-content: flex-end;
 
@@ -72,8 +76,13 @@ a:hover {
   display: inline;
 }
 
-.navbar-link {
+#header .navbar-link {
   padding: 1em;
+}
+
+#footer .navbar-link{
+  font-size: 1.5em;
+  padding: .5em;
 }
 
 .contact {
