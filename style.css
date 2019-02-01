@@ -59,6 +59,7 @@ a {
   text-decoration: none;
   color: var(--primary-text);
   transition: color .2s;
+  cursor: pointer;
 }
 
 a:hover {
@@ -89,7 +90,7 @@ a:hover {
   border: 2px solid currentColor;
 }
 
-#content {
+.content {
   font-size: 2em;
   padding: 20px 0;
 
@@ -102,15 +103,17 @@ a:hover {
 
   transform: translate(-50%, -50%);
 
+  transition: transform 1s, opacity .5s;
+
   text-align: center;
 
   background: #00000050;
 }
 
-#content > * {
+.content > * {
   margin: 0;
 }
 
-#content > span {
+.content > span {
   font-family: futuralight;
 }

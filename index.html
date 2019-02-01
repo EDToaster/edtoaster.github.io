@@ -7,20 +7,60 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css"> 
+  <script>
+    const numDivs = 4;
+  
+    const jumpTo = function(num) {
+      let windowHeight = window.innerHeight;
+
+      for (let i = 0; i < numDivs; i++) {
+        let transform;
+        let opacity;
+
+        if (i === num) {
+          transform = 'translate(-50%, -50%)';
+          opacity = '1.0';
+        }
+        else {
+          transform = `translate(-50%, ${-windowHeight}px)`
+          opacity = '0.0';
+        };
+
+        style = document.getElementById(i).style;
+        style.transform = transform;
+        style.opacity = opacity;
+      }
+    }
+  </script>
   <title>Howard Chen</title>
 </head>
 <body>
   <div id="header">
     <ul id="navbar">
-        <li class="navbar-item"><a class="navbar-link" href="">HOME</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="">PORTFOLIO</a></li>
-        <li class="navbar-item"><a class="navbar-link" href="">RESUME</a></li>
-        <li class="navbar-item"><a class="navbar-link contact" href="">CONTACT</a></li>
+        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(0);">HOME</a></li>
+        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(1);">PORTFOLIO</a></li>
+        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(2);">RESUME</a></li>
+        <li class="navbar-item"><a class="navbar-link contact" onclick="jumpTo(3);">CONTACT</a></li>
     </ul>
   </div>
 
-  <div id="content">
+  <div class="content" id="0">
       <h1>Hi, I'm Howard</h1>
+      <span>developer, musician, student</span>
+  </div>
+
+  <div class="content" id="1">
+      <h1>1</h1>
+      <span>developer, musician, student</span>
+  </div>
+
+  <div class="content" id="2">
+      <h1>2</h1>
+      <span>developer, musician, student</span>
+  </div>
+
+  <div class="content" id="3">
+      <h1>3</h1>
       <span>developer, musician, student</span>
   </div>
 
@@ -29,5 +69,7 @@
       <li class="navbar-item"><a class="navbar-link" href="https://www.linkedin.com/in/howard-chen-7b3a84165"><i class="fab fa-linkedin"></i></a></li>
       <li class="navbar-item"><a class="navbar-link" href=""><i class="fas fa-envelope-square"></i></a></li>
   </div>
+
+  <script>jumpTo(0);</script>
 </body>
 </html>
