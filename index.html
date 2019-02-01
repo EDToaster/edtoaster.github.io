@@ -7,27 +7,6 @@
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css"> 
-  <script>
-    const numDivs = 4;
-  
-    const jumpTo = function(num) {
-      let windowHeight = window.innerHeight;
-
-      for (let i = 0; i < numDivs; i++) {
-        let transform;
-
-        if (i === num) {
-          transform = 'translate(-50%, -50%)';
-        }
-        else {
-          transform = `translate(-50%, ${windowHeight * 2}px)`
-        };
-
-        style = document.getElementById(i).style;
-        style.transform = transform;
-      }
-    }
-  </script>
   <title>Howard Chen</title>
 </head>
 <body>
@@ -45,27 +24,10 @@
       <span>developer, musician, student</span>
   </div>
 
-  <div class="content" id="1">
-      <h1>1</h1>
-      <span>developer, musician, student</span>
-  </div>
-
-  <div class="content" id="2">
-      <h1>2</h1>
-      <span>developer, musician, student</span>
-  </div>
-
-  <div class="content" id="3">
-      <h1>3</h1>
-      <span>developer, musician, student</span>
-  </div>
-
   <div id="footer">
       <li class="navbar-item"><a class="navbar-link" href="https://github.com/edtoaster"><i class="fab fa-github-square"></i></a></li>
       <li class="navbar-item"><a class="navbar-link" href="https://www.linkedin.com/in/howard-chen-7b3a84165"><i class="fab fa-linkedin"></i></a></li>
       <li class="navbar-item"><a class="navbar-link" href=""><i class="fas fa-envelope-square"></i></a></li>
   </div>
-
-  <script>jumpTo(0);</script>
 </body>
 </html>
