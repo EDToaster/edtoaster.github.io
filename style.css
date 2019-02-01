@@ -31,12 +31,14 @@
 }
 
 html {
-  background: url(background.jpg) no-repeat center fixed; 
-  background-size: auto;
-
   color: var(--primary-text);
   font-family: futura_md_btmedium, sans-serif;
   font-size: 12pt;
+
+  background: url(background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 
 @media screen and (max-width:500px){
