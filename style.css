@@ -24,6 +24,7 @@
 
 }
 
+
 :root {
   --primary-text: #f0f0f0;
   --primary-text-accent: #b86200;
@@ -36,6 +37,12 @@ html {
   color: var(--primary-text);
   font-family: futura_md_btmedium, sans-serif;
   font-size: 12pt;
+}
+
+@media screen and (max-width:500px){
+  html{
+    font-size: 8pt;
+  }  
 }
 
 body {
