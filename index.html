@@ -15,20 +15,16 @@
 
       for (let i = 0; i < numDivs; i++) {
         let transform;
-        let opacity;
 
         if (i === num) {
           transform = 'translate(-50%, -50%)';
-          opacity = '1.0';
         }
         else {
-          transform = `translate(-50%, ${-windowHeight}px)`
-          opacity = '0.0';
+          transform = `translate(-50%, ${windowHeight * 2}px)`
         };
 
         style = document.getElementById(i).style;
         style.transform = transform;
-        style.opacity = opacity;
       }
     }
   </script>
