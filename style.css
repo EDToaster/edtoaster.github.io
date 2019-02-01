@@ -1,12 +1,98 @@
-:root {
-  --primary-background: white;
-  --secondary-background: #efefef; 
-  --tertiary-background: rgb(197, 197, 197);
+
+@font-face {
+  font-family: 'futura_md_btmedium';
+  src: url('fonts/futura_medium_bt-webfont.eot');
+  src: url('fonts/futura_medium_bt-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/futura_medium_bt-webfont.woff2') format('woff2'),
+       url('fonts/futura_medium_bt-webfont.woff') format('woff'),
+       url('fonts/futura_medium_bt-webfont.ttf') format('truetype'),
+       url('fonts/futura_medium_bt-webfont.svg#futura_md_btmedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'futuralight';
+  src: url('fonts/futura_light_bt-webfont.eot');
+  src: url('fonts/futura_light_bt-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/futura_light_bt-webfont.woff2') format('woff2'),
+       url('fonts/futura_light_bt-webfont.woff') format('woff'),
+       url('fonts/futura_light_bt-webfont.ttf') format('truetype'),
+       url('fonts/futura_light_bt-webfont.svg#futuralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+:root {
+  --primary-text: #f0f0f0;
+  --primary-text-accent: #b86200;
+}
+
+html {
+  background: url(background.jpg) no-repeat center center fixed; 
+  background-size: cover;
+
+  color: var(--primary-text);
+  font-family: futura_md_btmedium, sans-serif;
+  font-size: 12pt;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-text);
+  transition: color .2s;
+}
+
+a:hover {
+  color: var(--primary-text-accent);
+}
 
 #header {
-  background: var(--primary-background);
+  display: flex;
+  justify-content: right;
+
   padding: 1em;
-  border-bottom: 1px solid var(--tertiary-background);
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-link {
+  padding: 1em;
+}
+
+.contact {
+  border: 2px solid currentColor;
+}
+
+#content {
+  font-size: 2em;
+  padding: 20px;
+
+  position: absolute;
+
+  width: 100%;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  background: #00000050;
+}
+
+#content > * {
+  margin: 0;
+}
+
+#content > span {
+  font-family: futuralight;
 }
