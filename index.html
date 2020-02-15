@@ -3,31 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css"> 
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script> -->
   <title>Howard Chen</title>
 </head>
 <body>
-  <div id="header">
+  <!-- <div id="header">
     <ul id="navbar">
         <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(0);">HOME</a></li>
-        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(1);">PORTFOLIO</a></li>
-        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(2);">RESUME</a></li>
-        <li class="navbar-item"><a class="navbar-link contact" onclick="jumpTo(3);">CONTACT</a></li>
     </ul>
+  </div> -->
+  <div class="content-wrapper">
+    <div class="content">
+
+      <div class="section row title">
+        <div class="fill"></div>
+        <img class="logo" src="logo.svg" alt="Home">
+        <h2>.howard</h2>
+        <div class="fill"></div>
+      </div>
+
+      <div class="section">
+        <ul class="places-list">
+          <li class="places-item"><i class="fas fa-map-pin"></i></li>
+          <li class="bold">Toronto</li>
+          <li class="strike" style="--strike-color: rgb(10, 157, 255);">Seattle</li>
+          <li class="strike" style="--strike-color: rgb(57, 199, 57);">Vancouver</li>
+          <li class="strike" style="--strike-color: orange;">Taiwan</li>
+        </ul>
+      </div>      
+      
+      <div class="section">
+        <div class="section-header">
+          <h2>Where I've been</h2>
+        </div>
+
+        <ul class="history-list">
+          <li style="--gradient: linear-gradient(to bottom, #ff9900 0%, #ff9900 75%, #000000 75%) 1 100%;">
+            <div class="history-company"><span class="upcoming">Upcoming</span> - Amazon → 2020</div>
+            <div class="history-city">Seattle, WA</div>
+            <div class="history-title">I have no clue</div>
+            <div class="history-desc">Probably doing some programming</div>
+          </li>
+
+          <li style="--gradient: linear-gradient(to bottom, #ff9900 0%, #ff9900 75%, #000000 75%) 1 100%;">
+            <div class="history-company">Amazon → 2019</div>
+            <div class="history-city">Seattle, WA</div>
+            <div class="history-title">Programming Intern - AWS Forecasting Platform</div>
+            <div class="history-desc">Designing customer debugging tools</div>
+          </li>
+
+          <li style="--gradient: linear-gradient(to bottom, #f28533 0%, #f28533 50%, #0a925a 50%) 1 100%;">
+            <div class="history-company">Horizon Landscape Contractors → 2018</div>
+            <div class="history-city">Vancouver, BC</div>
+            <div class="history-title">Team Lead</div>
+            <div class="history-desc">Work site planning, transportation, coordination</div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="section">
+        <div class="links-list row">
+          <div class="fill"></div>
+          <div><a href="https://github.com/edtoaster"><i class="fab fa-github-square"></i></a></li></div>
+          <div><a href="https://www.linkedin.com/in/howard-chen-7b3a84165"><i class="fab fa-linkedin"></i></a></li></div>
+          <div class="fill"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="content" id="0">
-      <h1>Hi, I'm Howard</h1>
-      <span>developer, musician, student</span>
-  </div>
 
-  <div id="footer">
-      <li class="navbar-item"><a class="navbar-link" href="https://github.com/edtoaster"><i class="fab fa-github-square"></i></a></li>
-      <li class="navbar-item"><a class="navbar-link" href="https://www.linkedin.com/in/howard-chen-7b3a84165"><i class="fab fa-linkedin"></i></a></li>
-      <li class="navbar-item"><a class="navbar-link" href=""><i class="fas fa-envelope-square"></i></a></li>
-  </div>
 </body>
-</html>
+</html> 
