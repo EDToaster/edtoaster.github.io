@@ -113,6 +113,7 @@ li {
 .logo {
   height: 3em;
   color: black;
+  padding-right: 1em;
 }
 
 .places-list > li {
