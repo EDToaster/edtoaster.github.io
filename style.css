@@ -147,7 +147,17 @@ li {
   font-weight: lighter;
 }
 
-.history-list > li {
+.history-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.history-icon {
+  font-size: 2em;
+  margin: 20px;
+}
+
+.history-item {
   margin: 0.5em 0.5em 0.5em 0;
   padding-left: 0.5em;
   text-decoration: none;
@@ -159,7 +169,7 @@ li {
   margin-bottom: 2em;
 }
 
-.history-list > li > div {
+.history-item > div {
   margin: 0.5em 0 0.5em 0;
 }
 
@@ -169,10 +179,6 @@ li {
 
 .history-city {
   font-style: italic;
-}
-
-.history-title {
-  
 }
 
 .history-desc {
