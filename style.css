@@ -178,8 +178,11 @@ li {
   margin: 0.5em 0 0.5em 0;
 }
 
-.history-company {
+.history-title {
   font-weight: bold;
+}
+
+.history-company {
 }
 
 .history-city {
