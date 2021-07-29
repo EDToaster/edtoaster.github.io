@@ -201,6 +201,10 @@ a {
   cursor: pointer;
 }
 
+.accent {
+  color: var(--primary-text-accent);
+}
+
 a:hover {
   color: var(--primary-text-accent);
 }
