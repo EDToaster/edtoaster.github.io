@@ -3,105 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css"> 
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script> -->
+  <link rel="stylesheet" href="style.css">
   <title>Howard Chen</title>
 </head>
 <body>
-  <!-- <div id="header">
-    <ul id="navbar">
-        <li class="navbar-item"><a class="navbar-link" onclick="jumpTo(0);">HOME</a></li>
-    </ul>
-  </div> -->
-  <div class="content-wrapper">
-    <div class="content">
 
-      <div class="section row title">
-        <div class="fill"></div>
-        <h2 class="title-name">HOWARD CHEN</h2>
-        <div class="fill"></div>
+  <nav class="dot-nav" aria-label="Page sections">
+    <a class="dot active" href="#hero" aria-label="Intro"></a>
+    <a class="dot" href="#work" aria-label="Work"></a>
+    <a class="dot" href="#education" aria-label="Education"></a>
+    <a class="dot" href="#projects" aria-label="Projects"></a>
+  </nav>
+
+  <main class="snap-container">
+
+    <!-- Hero -->
+    <section id="hero">
+      <div class="section-content">
+        <h1 class="hero-name">Howard Chen</h1>
+        <p class="hero-title">Software Engineer II &middot; <img src="assets/instacart.png" alt="Instacart" class="company-logo"></p>
+        <div class="hero-links">
+          <a href="https://github.com/edtoaster" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i> edtoaster
+          </a>
+          <a href="https://www.linkedin.com/in/howchen" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> howchen
+          </a>
+          <span>
+            <i class="fab fa-canadian-maple-leaf"></i> vancouver
+          </span>
+        </div>
       </div>
+    </section>
 
-      <div class="section">
-        <ul class="places-list">
-          <li><a href="https://github.com/edtoaster">edtoaster <i class="fab fa-github" style="color: rgb(59, 122, 59);"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/howchen">howchen <i class="fab fa-linkedin" style="color: #0077b5;"></i></a></li>
-          <li>vancouver/bellevue <i class="fab fa-canadian-maple-leaf" style="color: rgb(255, 78, 78);"></i></li>
-          <!-- <li>resume <i class="fas fa-external-link-alt"></i></li> -->
-        </ul>
-      </div>      
-      
-      <div class="section">
-        <div class="history-list">
-          <!-- <li style="--gradient: linear-gradient(to bottom, #002f65 0%, #002f65 25%, #ffffff 25%, #ffffff 50%, #002f65 50%) 1 100%;"> -->
-          <div class="history-section">
-            <span class="history-time past">Grad. 2021</span> 
-            <div class="history-item" style="--gradient: linear-gradient(179.2deg, #002f65 0%, #002f65 65%, #ffffff 67%, #ffffff 72%, #002f65 74%, #002f65 100%) 1 100%;">
-              <div class="history-title">BSc in Computer Science</div>
-              <div class="history-company">University of Toronto</div>
-              <div class="history-city">Toronto, ON</div>
+    <!-- Work -->
+    <section id="work">
+      <div class="section-content">
+        <p class="section-label">Work</p>
+        <ul class="timeline">
+
+          <li class="timeline-item">
+            <span class="timeline-date">2025&thinsp;&ndash;&thinsp;Present</span>
+            <div class="timeline-body current">
+              <div class="timeline-company">Instacart</div>
+              <div class="timeline-role">Software Engineer</div>
+              <div class="timeline-features">
+              </div>
             </div>
-          </div>
+          </li>
           
-          <div class="history-section">
-            <span class="history-time current">2021 Present</span>
-            <div class="history-item" style="--gradient: linear-gradient(179.2deg, #ff9900 0%, #ff9900 73%, #000000 75%) 1 100%;">
-              <div class="history-title">Software Engineer II</div>
-              <div class="history-company">AWS EC2 Auto Scaling</div>
-              <div class="history-desc">🎉 Released Custom Termination Policies</div>
-              <div class="history-links">
-                [<a class="accent" href="https://aws.amazon.com/about-aws/whats-new/2021/07/amazon-ec2-auto-scaling-now-lets-you-control-which-instances-to-terminate-on-scale-in/">Announcement</a>]
-                [<a class="accent" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lambda-custom-termination-policy.html">Docs</a>]
-              </div>
-              <div class="history-desc">🔧 Released Instance Maintenance Policies</div>
-              <div class="history-links">
-                [<a class="accent" href="https://aws.amazon.com/blogs/compute/introducing-instance-maintenance-policy-for-amazon-ec2-auto-scaling/">AWS Blog</a>]
-                [<a class="accent" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-maintenance-policy-overview-and-considerations.html">Docs</a>]
+          <li class="timeline-item">
+            <span class="timeline-date">2024</span>
+            <div class="timeline-body">
+              <div class="timeline-company">Meta</div>
+              <div class="timeline-role">Production Engineer II</div>
+              <div class="timeline-features">
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="history-section">
-            <span class="history-time past">Summer 2020</span>
-            <div class="history-item" style="--gradient: linear-gradient(179.2deg, #ff9900 0%, #ff9900 73%, #000000 75%) 1 100%;">
-              <div class="history-title">Junior Software Engineer</div>
-              <div class="history-company">AWS EC2 Auto Scaling</div>
-              <div class="history-desc">💻 Developed Custom Termination Policies</div>
-              <div class="history-links">
-                [<a class="accent" href="https://aws.amazon.com/about-aws/whats-new/2021/07/amazon-ec2-auto-scaling-now-lets-you-control-which-instances-to-terminate-on-scale-in/">Announcement</a>]
-                [<a class="accent" href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lambda-custom-termination-policy.html">Docs</a>]
+          <li class="timeline-item">
+            <span class="timeline-date">2021&thinsp;&ndash;&thinsp;2024</span>
+            <div class="timeline-body">
+              <div class="timeline-company">Amazon Web Services EC2 Auto Scaling</div>
+              <div class="timeline-role">Software Engineer II</div>
+              <div class="timeline-features">
+                <div class="timeline-feature">
+                  Released Custom Termination Policies &mdash;
+                  <a href="https://aws.amazon.com/about-aws/whats-new/2021/07/amazon-ec2-auto-scaling-now-lets-you-control-which-instances-to-terminate-on-scale-in/" target="_blank" rel="noopener">Announcement</a>,
+                  <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lambda-custom-termination-policy.html" target="_blank" rel="noopener">Docs</a>
+                </div>
+                <div class="timeline-feature">
+                  Released Instance Maintenance Policies &mdash;
+                  <a href="https://aws.amazon.com/blogs/compute/introducing-instance-maintenance-policy-for-amazon-ec2-auto-scaling/" target="_blank" rel="noopener">AWS Blog</a>,
+                  <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-maintenance-policy-overview-and-considerations.html" target="_blank" rel="noopener">Docs</a>
+                </div>
               </div>
             </div>
-          </div>
+          </li>
 
-          <div class="history-section">
-            <span class="history-time past">Summer 2019</span>
-            <div class="history-item" style="--gradient: linear-gradient(179.2deg, #ff9900 0%, #ff9900 73%, #000000 75%) 1 100%;">
-              <div class="history-title">Junior Software Engineer</div>
-              <div class="history-company">AWS Forecasting Platform</div>
-              <div class="history-desc">Designing customer debugging tools</div>
+          <li class="timeline-item">
+            <span class="timeline-date">Summer 2020</span>
+            <div class="timeline-body">
+              <div class="timeline-company">Amazon Web Services EC2 Auto Scaling</div>
+              <div class="timeline-role">Junior Software Engineer</div>
+              <div class="timeline-features">
+                <div class="timeline-feature">Developed Custom Termination Policies</div>
+              </div>
             </div>
-          </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-date">Summer 2019</span>
+            <div class="timeline-body">
+              <div class="timeline-company">Amazon Web Services Forecasting Platform</div>
+              <div class="timeline-role">Junior Software Engineer</div>
+              <div class="timeline-features">
+                <div class="timeline-feature">Designed customer debugging tools</div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="section-content">
+        <p class="section-label">Education</p>
+        <div class="edu-item">
+          <div class="edu-degree">BSc in Computer Science with High Distinction</div>
+          <div class="edu-degree">Dean's List Scholar</div>
+          <div class="edu-school">University of Toronto</div>
+          <div class="edu-year">Graduated 2021</div>
         </div>
       </div>
-      
-      <!-- <div class="section">
-        <div class="links-list row">
-          <div class="fill"></div>
-          <div><a href="https://github.com/edtoaster"><i class="fab fa-github-square"></i>edtoaster</a></li></div>
-          <div><a href="https://www.linkedin.com/in/howard-chen-7b3a84165"><i class="fab fa-linkedin"></i></a></li></div>
-          <div class="fill"></div>
-        </div>
-      </div> -->
-    </div>
-  </div>
+    </section>
 
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-content">
+        <p class="section-label">Projects</p>
+        <ul class="project-list">
+
+          <li class="project-item">
+            <div class="project-name">hive</div>
+            <div class="project-tags"><span class="tag">Rust</span><span class="tag">AI</span><span class="tag">MCP</span></div>
+            <div class="project-desc">Stateless CLI and MCP server that orchestrates a swarm of Claude Code agents for autonomous software development. Features a coordinator&thinsp;&rarr;&thinsp;lead&thinsp;&rarr;&thinsp;worker hierarchy, per-agent git worktree isolation, automated code review via merge queue, and a live TUI dashboard.</div>
+            <div class="project-links">
+              <a href="https://github.com/EDToaster/hive" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-name">ferret</div>
+            <div class="project-tags"><span class="tag">Rust</span><span class="tag">Search</span></div>
+            <div class="project-desc">Trigram-indexed code search engine inspired by Google Code Search. Supports boolean and regex queries across 60+ languages with incremental indexing, memory-mapped reads, and a web UI with search-as-you-type.</div>
+            <div class="project-links">
+              <a href="https://github.com/EDToaster/ferret" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-name">LittleLogistics &amp; LittleContraptions</div>
+            <div class="project-tags"><span class="tag">Java</span><span class="tag">Minecraft</span><span class="tag">31 million+ downloads</span></div>
+            <div class="project-desc">A pair of Minecraft Forge mods adding water and rail logistics via tugs, barges, and automated routes &mdash; plus a Create mod expansion for contraption transport on barges. 18M downloads on LittleLogistics and 13M on LittleContraptions, with 11+ releases shipped.</div>
+            <div class="project-links">
+              <a href="https://github.com/MuradAkh/LittleLogistics" target="_blank" rel="noopener"><i class="fab fa-github"></i> LittleLogistics</a>
+              <a href="https://github.com/EDToaster/LittleContraptions" target="_blank" rel="noopener"><i class="fab fa-github"></i> LittleContraptions</a>
+            </div>
+          </li>
+
+          <li class="project-item">
+            <div class="project-name">ToastCPU</div>
+            <div class="project-tags"><span class="tag">Rust</span><span class="tag">Verilog</span><span class="tag">Hardware</span></div>
+            <div class="project-desc">A complete 16-bit computing stack built from scratch: ISA and ABI specification, functional emulator, subscalar FPGA implementation in Verilog, and a custom assembler. Spans the full journey from architecture design to hardware synthesis.</div>
+            <div class="project-links">
+              <a href="https://github.com/EDToaster/ToastCPU" target="_blank" rel="noopener"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const snap = document.querySelector('.snap-container');
+    const dots = document.querySelectorAll('.dot');
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dots.forEach(d => d.classList.remove('active'));
+          const i = [...sections].indexOf(entry.target);
+          if (dots[i]) dots[i].classList.add('active');
+        }
+      });
+    }, { root: snap, threshold: 0.5 });
+    sections.forEach(s => observer.observe(s));
+  </script>
 
 </body>
-</html> 
+</html>
